@@ -13,5 +13,5 @@ Jeu de course multijoueurs en 2D
 ![picture](Documents/ObjectifsDiagram.png)
 ## Use Case
 ![picture](Documents/UseCase.png)
-## Use Case
+## Schéma de la base de données SQL
 ![picture](Documents/bdd_pt.png)
