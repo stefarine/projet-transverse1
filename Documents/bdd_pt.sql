@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le :  mar. 10 mars 2020 à 17:35
+-- Généré le :  mar. 10 mars 2020 à 17:40
 -- Version du serveur :  10.1.37-MariaDB
 -- Version de PHP :  7.2.12
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données :  `test`
+-- Base de données :  `bdd_pt`
 --
 
 -- --------------------------------------------------------
