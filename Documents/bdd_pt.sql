@@ -1,26 +1,13 @@
--- phpMyAdmin SQL Dump
--- version 4.8.3
--- https://www.phpmyadmin.net/
---
--- Hôte : 127.0.0.1
--- Généré le :  mar. 10 mars 2020 à 17:40
--- Version du serveur :  10.1.37-MariaDB
--- Version de PHP :  7.2.12
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
-SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données :  `bdd_pt`
+-- Structure de la table `appartient`
 --
+
+CREATE TABLE `appartient` (
+  `id_partie` int(11) NOT NULL,
+  `id_tournoi` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -58,8 +45,7 @@ CREATE TABLE `partie` (
   `mdp` varchar(45) NOT NULL,
   `date` datetime NOT NULL,
   `type` set('public','prive') NOT NULL,
-  `etat` set('init','playing','ended') NOT NULL,
-  `id_tournoi` int(11) NOT NULL
+  `etat` set('init','playing','ended') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -78,8 +64,16 @@ CREATE TABLE `tournoi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Index pour les tables déchargées
+-- Index pour les tables exportées
 --
+
+--
+-- Index pour la table `appartient`
+--
+ALTER TABLE `appartient`
+  ADD PRIMARY KEY (`id_partie`,`id_tournoi`),
+  ADD KEY `fkIdx_72` (`id_partie`),
+  ADD KEY `fkIdx_76` (`id_tournoi`);
 
 --
 -- Index pour la table `classement`
@@ -99,8 +93,7 @@ ALTER TABLE `joueur`
 -- Index pour la table `partie`
 --
 ALTER TABLE `partie`
-  ADD PRIMARY KEY (`id_partie`),
-  ADD KEY `fkIdx_68` (`id_tournoi`);
+  ADD PRIMARY KEY (`id_partie`);
 
 --
 -- Index pour la table `tournoi`
@@ -109,7 +102,7 @@ ALTER TABLE `tournoi`
   ADD PRIMARY KEY (`id_tournoi`);
 
 --
--- AUTO_INCREMENT pour les tables déchargées
+-- AUTO_INCREMENT pour les tables exportées
 --
 
 --
@@ -117,16 +110,26 @@ ALTER TABLE `tournoi`
 --
 ALTER TABLE `joueur`
   MODIFY `id_joueur` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT pour la table `partie`
 --
 ALTER TABLE `partie`
   MODIFY `id_partie` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT pour la table `tournoi`
+--
+ALTER TABLE `tournoi`
+  MODIFY `id_tournoi` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- Contraintes pour les tables exportées
+--
 
 --
--- Contraintes pour les tables déchargées
+-- Contraintes pour la table `appartient`
 --
+ALTER TABLE `appartient`
+  ADD CONSTRAINT `FK_72` FOREIGN KEY (`id_partie`) REFERENCES `partie` (`id_partie`),
+  ADD CONSTRAINT `FK_76` FOREIGN KEY (`id_tournoi`) REFERENCES `tournoi` (`id_tournoi`);
 
 --
 -- Contraintes pour la table `classement`
@@ -134,14 +137,3 @@ ALTER TABLE `partie`
 ALTER TABLE `classement`
   ADD CONSTRAINT `FK_54` FOREIGN KEY (`id_joueur`) REFERENCES `joueur` (`id_joueur`),
   ADD CONSTRAINT `FK_57` FOREIGN KEY (`id_partie`) REFERENCES `partie` (`id_partie`);
-
---
--- Contraintes pour la table `partie`
---
-ALTER TABLE `partie`
-  ADD CONSTRAINT `FK_68` FOREIGN KEY (`id_tournoi`) REFERENCES `tournoi` (`id_tournoi`);
-COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
