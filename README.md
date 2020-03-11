@@ -1,5 +1,5 @@
 # Projet Transverse I
-Jeu de course multijoueurs en 2D
+Jeu de course multijoueurs en 2D.
 
 # draw.io links
 * [Graph de la bdd](https://www.draw.io/#G1HM3u5Jm_DHEvWb5QuPT6elJKHJPSvnr9)
