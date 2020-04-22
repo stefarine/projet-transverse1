@@ -5,16 +5,16 @@ var server = require('http').Server(app);
 const io = require('socket.io').listen(server);
 const path = require('path');
 
-app.use('/js',express.static(__dirname + '/js'));
-app.use('/assets',express.static('../assets'));
+app.use('/js',express.static(__dirname + '/src/app/game/js'));
+app.use('/assets',express.static(__dirname + '/src/assets'));
 
 
 // Serve only the static files form the dist directory
-app.use(express.static('/dist/demo'));
+app.use(express.static(__dirname + '/dist/demo'));
 
 app.get('/*', function(req,res) {
     
-res.sendFile(path.join('/dist/demo/index.html'));
+res.sendFile(path.join(__dirname + '/dist/demo/index.html'));
 });
 
 
