@@ -12,10 +12,10 @@ app.use('/assets',express.static(__dirname + '/src/assets'));
 // Serve only the static files form the dist directory
 app.use(express.static(__dirname + '/dist/demo'));
 
-app.get('/', function(req,res) {
-    
-res.sendFile(path.join(__dirname + '/dist/demo/index.html'));
-});
+app.get('/*', function(req, res) {
+    res.sendFile('index.html', {root: 'dist/demo/'}
+  );
+  });
 
 
 // Player config
@@ -61,7 +61,7 @@ io.on('connection', function (socket) {
 });
 
 // Start the server
-const port = 3000;
+const port = 8080;
 server.listen(port,function(){
     console.log('Listening on '+server.address().port);
 });

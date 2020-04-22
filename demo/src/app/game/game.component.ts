@@ -75,7 +75,7 @@ function create() {
   this.container = [];
 
   // creation de la connexion socket
-  this.socket = io.connect(`http://localhost:3000`);
+  this.socket = io.connect(`http://localhost:8080`);
 
 
   // chargement des joueurs deja en ligne
