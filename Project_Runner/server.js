@@ -62,7 +62,7 @@ io.on('connection', function (socket) {
 });
 
 // Start the server
-const port = 3000;
+const port = 4200;
 server.listen(port,function(){
     console.log('Listening on '+server.address().port);
 });
