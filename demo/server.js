@@ -3,14 +3,19 @@ const express = require('express');
 const app = express();
 var server = require('http').Server(app);
 const io = require('socket.io').listen(server);
+const path = require('path');
 
-app.use('/css',express.static(__dirname + '/css'));
 app.use('/js',express.static(__dirname + '/js'));
 app.use('/assets',express.static('../assets'));
 
 
+// Serve only the static files form the dist directory
+app.use(express.static('/dist/demo'));
 
-
+app.get('/*', function(req,res) {
+    
+res.sendFile(path.join('/dist/demo/index.html'));
+});
 
 
 // Player config
