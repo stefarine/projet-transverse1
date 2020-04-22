@@ -9,6 +9,7 @@ import { AccueilComponent } from './accueil/accueil.component';
 import { MenuPComponent } from './menu-p/menu-p.component';
 import { ChoixPComponent } from './choix-p/choix-p.component';
 import { SettingsComponent } from './settings/settings.component';
+import { GameComponent } from './game/game.component';
 
 const appRoutes = [
   { path: 'settings/back', redirectTo: '', pathMatch: 'full' },
@@ -29,7 +30,8 @@ const appRoutes = [
   { path: 'connexion/validation', component: MenuPComponent  },
   { path: 'connexion/validation/partieRapide', component: ChoixPComponent  },
   { path: 'connexion/validation/tournoi', component: ChoixPComponent  },
-  { path: '', component: AccueilComponent }
+  { path: '', component: AccueilComponent },
+  { path: 'play', component: GameComponent }
 ];
 
 @NgModule({
@@ -40,6 +42,7 @@ const appRoutes = [
     MenuPComponent,
     ChoixPComponent,
     SettingsComponent,
+    GameComponent,
 
   ],
   imports: [
