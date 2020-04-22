@@ -3,7 +3,6 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "postinstall": "ng build --aot -prod",
     "start": "node src/app/game/server.js",
     "site": "ng serve",
     "game": "node src/app/game/server.js",
