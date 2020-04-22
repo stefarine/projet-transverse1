@@ -41,7 +41,7 @@ export class GameComponent implements OnInit {
 
 
 
-// Tous les joueur en ligne
+// Tous les joueurs en ligne
 var onlinePlayer;
 let onlinePlayers = [];
 
@@ -75,7 +75,7 @@ function create() {
   this.container = [];
 
   // creation de la connexion socket
-  this.socket = io.connect(`http://localhost:4200`);
+  this.socket = io.connect(`http://localhost:3000`);
 
 
   // chargement des joueurs deja en ligne

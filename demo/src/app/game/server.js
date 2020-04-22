@@ -8,13 +8,7 @@ app.use('/css',express.static(__dirname + '/css'));
 app.use('/js',express.static(__dirname + '/js'));
 app.use('/assets',express.static('../assets'));
 
-app.get('/',function(req,res){
-    res.sendFile('src/index.html');
-});
 
-app.get('/',function(req,res){
-    res.sendFile('src/index.html'); 
-});
 
 
 
@@ -62,7 +56,7 @@ io.on('connection', function (socket) {
 });
 
 // Start the server
-const port = 4200;
+const port = 3000;
 server.listen(port,function(){
     console.log('Listening on '+server.address().port);
 });

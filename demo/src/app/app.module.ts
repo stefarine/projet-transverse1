@@ -31,7 +31,7 @@ const appRoutes = [
   { path: 'connexion/validation/partieRapide', component: ChoixPComponent  },
   { path: 'connexion/validation/tournoi', component: ChoixPComponent  },
   { path: '', component: AccueilComponent },
-  { path: 'play', component: GameComponent }
+  { path: 'connexion/validation/partieRapide/play', component: GameComponent }
 ];
 
 @NgModule({
