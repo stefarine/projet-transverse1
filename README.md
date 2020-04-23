@@ -15,7 +15,7 @@ Jeu de course multijoueurs en 2D.
 ## Schéma de la base de données
 ![picture](Documents/BDdiagram.png)
 ## Schéma des objectifs
-![picture](Documents/ObjectifsDiagram.png)
+![picture](Documents/ADO_versionCheckPoint2.png)
 ## Use Case
 ![picture](Documents/UseCase.png)
 ## Schéma de la base de données SQL
